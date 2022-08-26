@@ -1,0 +1,51 @@
+@import "./card";
+
+
+.intro {
+  width: 100%;
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 40px;
+    .card {
+    //   @extend %card; 
+    @include custom-card(300px, 500px, $main-bg-orange, '0 0 10 0 silver', 10px, 0px);
+
+
+      &-image {
+        filter: brightness(0.8);
+        transition: all 0.3s ease;
+        -webkit-filter: brightness(0.8);
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+
+        &:hover {
+          filter: brightness(1);
+          -webkit-filter: brightness(1);
+        }
+      }
+
+      &-body{
+        padding: 8px 10px ;
+      }
+      &:hover{
+        box-shadow: 0 0 0 1px silver;
+      }
+    }
+  }
+
+    &__box{
+        @extend %card;
+        justify-content: space-around;
+        padding: 40px;
+
+        .box{
+            @extend %card;
+        }
+        
+    }
+
+}
